@@ -1,6 +1,22 @@
 import eel
+from json import loads, dumps
+
+
+class Search:
+	def __init__(self, form):
+		self.json_form = loads(form)
+	
+	def execute(self):
+		pass
+
 
 eel.init('web')
+
+
+@eel.expose
+def receive_form(form):
+	new_search = Search(form)
+	new_search.execute()
 
 
 def fill_selects():
@@ -20,7 +36,11 @@ def fill_selects():
 	rstates = fstates.read()
 	fstates.close()
 
-	eel.fillSelectElements([rcountries, rstates, rmeans, rcategories])
+	fmonths = open('jsons\\month_names.json')
+	rmonths = fmonths.read()
+	fmonths.close()
+
+	eel.fillSelectElements([rcountries, rstates, rmeans, rcategories, rmonths])
 
 
 def assemble():

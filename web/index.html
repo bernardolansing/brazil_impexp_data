@@ -14,8 +14,8 @@
 
 	<nav id="nav-filter">
 		<select id="select-import-export">
-			<option id="option-export" selected>Exportações</option>
-			<option id="option-import">Importações</option>
+			<option name="exp" selected>Exportações</option>
+			<option name="imp">Importações</option>
 		</select>
 		<select id="select-country">
 			<option disabled selected>País de origem/destino</option>
@@ -30,9 +30,6 @@
 		<select id="select-month">
 			<option disabled selected>Mês</option>
 		</select>
-		<select id="select-supercategory">
-			<option disabled selected>Supercategoria</option>
-		</select>
 		<select id="select-category">
 			<option disabled selected>Categoria</option>
 		</select>
@@ -40,7 +37,32 @@
 
 		<button id="button-filter" onclick="sendForm()">FILTRAR</button>
 	</nav>
+
+	<div id="div-loading" style="display: none;">
+		<p>Aguarde enquanto os dados são processados!</p>
+		<br>
+		<div id="loading-circle"></div>
+	</div>
 	
+	<div id="div-show-results" style="display: none;">
+		<p id="p-search-status">
+			Estes são os resultados do filtro aplicado:
+		</p>
+		<table id="search-results-table" cellspacing="0">
+			<tr id="search-results-table-headerrow">
+				<th id="th-mes">Mês</th>
+				<th>Categoria</th>
+				<th>País</th>
+				<th>Estado</th>
+				<th>Meio de transporte</th>
+				<th>Volume</th>
+				<th>Peso bruto</th>
+				<th>Valor financeiro</th>
+			</tr>
+		</table>
+	</div>
+
+	<div class="spacer"></div>
 
 </body>
 </html>

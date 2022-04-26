@@ -1,22 +1,16 @@
 import eel
-from json import loads, dumps
-
-
-class Search:
-	def __init__(self, form):
-		self.json_form = loads(form)
-	
-	def execute(self):
-		pass
-
+from json import loads
+import db_maker
+from db_maker import Entry
 
 eel.init('web')
 
 
 @eel.expose
 def receive_form(form):
-	new_search = Search(form)
-	new_search.execute()
+	form = loads(form)
+	results = db_maker.search(form)
+	eel.displaySearchResults(results)
 
 
 def fill_selects():

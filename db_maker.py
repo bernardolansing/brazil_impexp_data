@@ -169,9 +169,9 @@ def write_entries(entries):
 				'country_code': e.country_code,
 				'state': e.state,
 				'mean': e.mean,
-				'quantity': str(float(e.quantity)),
-				'gross_weight': str(int(e.gross_weight)),
-				'transaction_value': str(int(e.transaction_value))
+				'quantity': float(e.quantity),
+				'gross_weight': int(e.gross_weight),
+				'transaction_value': int(e.transaction_value)
 			})
 	
 	# turning representative codes into its respective values

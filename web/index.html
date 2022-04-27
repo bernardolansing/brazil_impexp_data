@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Trabalho final de CPD</title>
 	<link rel="stylesheet" href="styles.css">
-	<script src="eel.js"></script>
-	<script src="js.js"></script>
 </head>
 <body>
 	<header>
@@ -43,26 +41,55 @@
 		<br>
 		<div id="loading-circle"></div>
 	</div>
+
 	
 	<div id="div-show-results" style="display: none;">
 		<p id="p-search-status">
 			Estes são os resultados do filtro aplicado:
 		</p>
+
+		<select id="select-order" onchange="sortTable()">
+			<option disabled selected>ORDENAR POR:</option>
+			<option name="month">Mês</option>
+			<option name="month-r">Mês (decrescente)</option>
+			<option name="category"><strong>Categoria</strong></option>
+			<option name="category-r">Cateogria (decrescente)</option>
+			<option name="country">País</option>
+			<option name="country-r">País (decrescente)</option>
+			<option name="state">Estado</option>
+			<option name="state-r">Estado (decrescente)</option>
+			<option name="mean">Meio de transporte</option>
+			<option name="mean-r">Meio de transporte (decrescente)</option>
+			<option name="quantity">Volume</option>
+			<option name="quantity-r">Volume (decrescente)</option>
+			<option name="gross-weight">Peso bruto</option>
+			<option name="gross-weight-r">Peso bruto (decrescente)</option>
+			<option name="transaction-value">Valor financeiro</option>
+			<option name="transaction-value-r">Valor financeiro (decrescente)</option>
+		</select>
+
+		<p id="p-execution-time">Tempo de execução da pesquisa: </p>
+
 		<table id="search-results-table" cellspacing="0">
-			<tr id="search-results-table-headerrow">
-				<th id="th-mes">Mês</th>
-				<th>Categoria</th>
-				<th>País</th>
-				<th>Estado</th>
-				<th>Meio de transporte</th>
-				<th>Volume</th>
-				<th>Peso bruto</th>
-				<th>Valor financeiro</th>
-			</tr>
+			<tbody>
+				<tr id="search-results-table-headerrow">
+					<th id="th-mes">Mês</th>
+					<th>Categoria</th>
+					<th>País</th>
+					<th>Estado</th>
+					<th>Meio de transporte</th>
+					<th>Volume</th>
+					<th>Peso bruto</th>
+					<th>Valor financeiro</th>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 
 	<div class="spacer"></div>
-
 </body>
+
+<script src="eel.js"></script>
+<script src="js.js"></script>
+
 </html>

@@ -33,13 +33,13 @@ header p {
 	text-align: center;
 }
 
-#nav-filter select {
+select {
 	margin: 3px 0.3em;
 	padding: 0.4em;
 	max-width: 200px;
 }
 
-#nav-filter option {
+option {
 	font-size: 11pt;
 	max-width: 200px;
 }
@@ -78,6 +78,18 @@ header p {
 	margin-bottom: 25px;
 }
 
+#select-order {
+	margin-left: 5vw;
+}
+
+#p-execution-time {
+	text-align: right;
+	margin-right: 5vw;
+	color: gray;
+	display: inline;
+	float: right;
+}
+
 #search-results-table {
 	/* visibility: hidden; */
 	width: 95vw;
@@ -90,19 +102,21 @@ header p {
 	text-align: center;
 }
 
-/* #search-results-table td {
-	text-align: center;
-} */
-
 .innerRow {
 	border-top: 1px solid lightgray;
+}
+
+.numberCell {
+	padding-left: 1em;
+	padding-right: 1em;
+	text-align: right;
 }
 
 #th-mes {
 	width: 100px;
 }
 
-#spacer {
+.spacer {
 	height: 100px;
 }
 

@@ -1,7 +1,8 @@
 import eel
 from json import loads
-import db_maker
-from db_maker import Entry
+import db_dealer
+from db_dealer import Entry
+from matplotlib import pyplot
 
 eel.init('web')
 
@@ -9,8 +10,18 @@ eel.init('web')
 @eel.expose
 def receive_form(form):
 	form = loads(form)
-	results = db_maker.search(form)
+	results = db_dealer.search(form)
 	eel.displaySearchResults(results)
+
+
+@eel.expose
+def chart_request(data):
+	sorted_data = {key: value for key, value in sorted(data.items(), key = lambda item: item[1], reverse = True)}
+	labels = [label for label in list(sorted_data)[:10]]
+	amounts = [amount for amount in list(sorted_data.values())[:10]]
+
+	pyplot.pie(amounts, labels = labels, autopct = '%.2f%%')
+	pyplot.show()
 
 
 def fill_selects():

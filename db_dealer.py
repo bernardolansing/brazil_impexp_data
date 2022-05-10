@@ -1,5 +1,4 @@
 import csv
-import json
 import pickle
 from os import system
 from os.path import exists
